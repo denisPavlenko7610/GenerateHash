@@ -1,0 +1,11 @@
+﻿<Window x:Class="HashGeneratorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Hash Generator App" Height="130" Width="440"
+        Background="#333333"
+        WindowStyle="None">
+    <Grid>
+        <Button Content="Next" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,70,0,0" Click="NextButton_Click" Height="35" Width="71" Background="#888"/>
+        <Label x:Name="hashLabel" Content="Hash" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,28,0,0"  Foreground="White"/>
+    </Grid>
+</Window>
