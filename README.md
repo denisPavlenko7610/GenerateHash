@@ -1,4 +1,5 @@
 # GenerateHash
 WPF app with automatically copy to cliplord
 
-![image](https://github.com/denisPavlenko7610/GenerateHash/assets/13468920/4a4d61f4-cc18-4997-ac06-52a3f7d45127)
+![image](https://github.com/denisPavlenko7610/GenerateHash/assets/13468920/b30c02ac-da2b-41ad-8eb3-500aaff3075f)
+
