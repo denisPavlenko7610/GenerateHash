@@ -7,10 +7,11 @@ namespace HashGeneratorApp
 {
     public partial class MainWindow : Window
     {
+        const int maxRoundCount = 20;
         public MainWindow()
         {
             InitializeComponent();
-            Left = 1630;
+            Left = 1825;
             Top = 200;
 
             GenerateAndDisplayHash();
@@ -20,7 +21,8 @@ namespace HashGeneratorApp
         {
             string randomString = GenerateRandomString();
             string hash = ComputeHash(randomString);
-            hashLabel.Content = hash;
+            string truncatedHash = TruncateWithEllipsis(hash, maxRoundCount);
+            hashLabel.Content = truncatedHash;
             Clipboard.SetText(hash);
         }
 
@@ -42,7 +44,9 @@ namespace HashGeneratorApp
         {
             string randomString = GenerateRandomString();
             string hash = ComputeHash(randomString);
-            hashLabel.Content = hash;
+
+            string truncatedHash = TruncateWithEllipsis(hash, maxRoundCount);
+            hashLabel.Content = truncatedHash;
         }
 
         private string ComputeHash(string input)
@@ -53,6 +57,23 @@ namespace HashGeneratorApp
                 byte[] hashBytes = sha256.ComputeHash(inputBytes);
                 return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
             }
+        }
+
+        private string TruncateWithEllipsis(string str, int maxLength)
+        {
+            if (string.IsNullOrEmpty(str) || str.Length <= maxLength)
+                return str;
+
+            int halfMaxLength = maxLength / 2;
+            int startLength = halfMaxLength - 1;
+            int endLength = halfMaxLength + 1;
+
+            StringBuilder builder = new StringBuilder();
+            builder.Append(str.Substring(0, startLength));
+            builder.Append(" ..... ");
+            builder.Append(str.Substring(str.Length - endLength));
+
+            return builder.ToString();
         }
     }
 }
