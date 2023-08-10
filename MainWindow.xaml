@@ -4,6 +4,9 @@
         Title="Hash Generator App" Height="130" Width="245"
         Background="#333333"
         WindowStyle="None">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5"/>
+    </WindowChrome.WindowChrome>
     <Grid>
         <Button Content="Next" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,70,0,0" Click="NextButton_Click" Height="35" Width="71" Background="#888"/>
         <Label x:Name="hashLabel" Content="Hash" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,28,0,0"  Foreground="White"/>
